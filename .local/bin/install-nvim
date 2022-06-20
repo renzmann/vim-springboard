@@ -15,9 +15,6 @@ _install_nvim() {
 				&& mv nvim.appimage "$HOME/.local/bin/nvim"
 			;;
 	esac
-
-	python3 -m venv "$HOME/.nvim.venv"
-	"$HOME/.nvim.venv/bin/python3" -m pip install --upgrade pip black flake8 jedi jedi-language-server neovim mypy
 }
 
 _install_nvim "$@"
