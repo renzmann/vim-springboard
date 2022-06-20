@@ -34,7 +34,6 @@ autocmd VimEnter *
   \  if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \|   PlugInstall --sync | q
   \| endif
-" }}}
 
 call plug#begin()
 " Basics
@@ -71,6 +70,7 @@ Plug 'navarasu/onedark.nvim'
 Plug 'rust-lang/rust.vim'
 Plug 'cespare/vim-toml'
 call plug#end()
+" }}}
 
 " Color theme {{{
 " Dan's color theme: Apprentice
@@ -177,6 +177,7 @@ EOF
 " Copied from the suggestions in the nvim-lspconfig README:
 " https://github.com/neovim/nvim-lspconfig
 lua << EOF
+require("nvim-lsp-installer").setup { automatic_installation = true }
 local lspconfig = require('lspconfig')
 
 -- Use an on_attach function to only map the following keys
@@ -221,36 +222,6 @@ end
 
 -- rust notes
 -- https://rust-analyzer.github.io/manual.html#installation
-
--- python setup
--- TODO How do I do a ternary in lua?
--- local pyright_command = vim.fn.has('win32') and 'pyright-langserver.cmd' or 'pyright-langserver'
-local pyright_command = 'pyright-langserver'
-lspconfig['pyright'].setup {
-  cmd = { pyright_command, '--stdio' },
-  on_attach = on_attach,
-  filetypes = { 'python' },
-  root_dir = lspconfig.util.root_pattern(
-    'pyproject.toml',
-    'setup.cfg',
-    'setup.py',
-    'requirements.txt',
-    '.git',
-    '.gitignore'
-  ),
-  settings = {
-    python = {
-      analysis = {
-        autoSearchPaths = true,
-        diagnosticMode = "workspace",
-        useLibraryCodeForTypes = true
-      },
-      pythonPath = "python3"
-    }
-  },
-  single_file_support = true,
-  capabilities = capabilities,
-}
 
 -- gopls setup
 -- Make sure that $GOPATH/bin is on $PATH after installing gopls for this to work
