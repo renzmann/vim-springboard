@@ -69,3 +69,18 @@ nnoremap <silent>cgn          :<C-u>let @/=expand('<cword>')<cr>cgn
 " nnoremap <leader>fr         :Rg<CR>
 " nnoremap <leader>fa         :<C-u>e ~/.aws/credentials<CR>
 
+" Language server bindings
+" -----------------------------------------------------------------------
+inoremap <silent><C-s>         <ESC>l:lua vim.lsp.buf.signature_help()<CR>i
+nnoremap <silent><leader>wa    :lua vim.lsp.buf.add_workspace_folder()<CR>
+nnoremap <silent><leader>wr    :lua vim.lsp.buf.remove_workspace_folder()<CR>
+nnoremap <silent><leader>wl    :lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>
+" [r]ename
+nnoremap <silent><leader>rn    :lua vim.lsp.buf.rename()<CR>
+" [g]o references
+nnoremap <silent><leader>gr    :lua vim.lsp.buf.references()<CR>
+" [d]iagnostics
+nnoremap <silent><leader>de    :lua vim.diagnostic.open_float()<CR>
+nnoremap <silent><leader>dn    :lua vim.diagnostic.goto_next()<CR>
+nnoremap <silent><leader>dp    :lua vim.diagnostic.goto_prev()<CR>
+nnoremap <silent><leader>dq    :lua vim.diagnostic.setqflist()<CR>
