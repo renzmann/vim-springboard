@@ -2,7 +2,7 @@
 
 ## Setting up:
 
-```
+```sh
 cd $HOME
 git init
 git remote add origin https://github.com/renzmann/vim-springboard
