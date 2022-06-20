@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+_install_nvim() {
+	local version=${1:-"0.7.0"}
+	local download_url="https://github.com/neovim/neovim/releases/download/v${version}"
+
+	case $OSTYPE in
+		'darwin'*)
+			curl -sSLO "${download_url}/nvim-macos.tar.gz" \
+				&& tar xzvf nvim-macos.tar.gz \
+				&& mv ./nvim-macos.tar.gz "$HOME/.local/bin"
+			;;
+		*)
+			curl -LO "${download_url}/nvim.appimage" \
+				&& chmod u+x nvim.appimage \
+				&& mv nvim.appimage "$HOME/.local/bin/nvim"
+			;;
+	esac
+
+	python3 -m venv "$HOME/.nvim.venv"
+	"$HOME/.nvim.venv/bin/python3" -m pip install --upgrade pip black flake8 jedi jedi-language-server neovim mypy
+}
+
+_install_nvim "$@"
