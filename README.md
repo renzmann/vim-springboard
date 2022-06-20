@@ -6,8 +6,8 @@
 cd $HOME
 git init
 git remote add origin https://github.com/renzmann/vim-springboard
-git pull
 git checkout main
+git pull
 ```
 
 This will put all the files from this repo in your home directory. You are then
