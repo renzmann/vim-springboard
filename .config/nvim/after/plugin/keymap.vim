@@ -31,10 +31,10 @@ nnoremap <silent>cgn          :<C-u>let @/=expand('<cword>')<cr>cgn
 
 " [s]ettings navigation
 " -----------------------------------------------------------------------
-nnoremap <silent><leader>si   :<C-u>e $MYVIMRC<CR>
-nnoremap <silent><leader>sk   :<C-u>e ~/.config/nvim/after/plugin/keymap.vim<CR>
-nnoremap <silent><leader>sap  :<C-u>e ~/.config/nvim/after/plugin<CR>
-nnoremap <silent><leader>saf  :<C-u>e ~/.config/nvim/after/ftplugin<CR>
+" nnoremap <silent><leader>si   :<C-u>e $MYVIMRC<CR>
+" nnoremap <silent><leader>sk   :<C-u>e ~/.config/nvim/after/plugin/keymap.vim<CR>
+" nnoremap <silent><leader>sap  :<C-u>e ~/.config/nvim/after/plugin<CR>
+" nnoremap <silent><leader>saf  :<C-u>e ~/.config/nvim/after/ftplugin<CR>
 
 " [t]ree view of the CWD or current file's directory
 " -----------------------------------------------------------------------
@@ -62,10 +62,10 @@ nnoremap <silent><leader>saf  :<C-u>e ~/.config/nvim/after/ftplugin<CR>
 
 " [f]ind things
 " -----------------------------------------------------------------------
-nnoremap <leader>ff         :Files<CR>
-nnoremap <leader>fb         :Buffers<CR>
-nnoremap <leader>fg         :GitFiles<CR>
-nnoremap <leader>ft         :Tags<CR>
-nnoremap <leader>fr         :Rg<CR>
-nnoremap <leader>fa         :<C-u>e ~/.aws/credentials<CR>
+" nnoremap <leader>ff         :Files<CR>
+" nnoremap <leader>fb         :Buffers<CR>
+" nnoremap <leader>fg         :GitFiles<CR>
+" nnoremap <leader>ft         :Tags<CR>
+" nnoremap <leader>fr         :Rg<CR>
+" nnoremap <leader>fa         :<C-u>e ~/.aws/credentials<CR>
 
